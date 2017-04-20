@@ -4,6 +4,7 @@
     "gulp-coffee": "latest",
     "gulp-concat": "latest",
     "gulp-connect": "latest",
+    "gulp-livereload": "^3.8.1",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "latest",
     "gulp-util": "latest",
