@@ -1,10 +1,40 @@
-$font-stack:    Helvetica, sans-serif
-$primary-color: red
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+
+$break-small: 400px;
+$break-large: 1200px;
+
+//Color Variables
+$color1: #E84545 //Red
+$color2: #53354A //Plum
+$color3: #903749 //Maroon
 
 body
-  font: 100% $font-stack
-  color: $primary-color
-  text-align: left
+  padding: 0
+  margin: 0
+  background-color: $color1
+  color: $color2
+  font-family: 'Oswald', sans-serif
+  line-height: 2em
+  text-transform: uppercase
 
-h1
-  color: blue
+.full-height
+  height: 100vh
+
+.vertical-center
+  display: flex
+  align-items: center
+
+.center
+  text-align: center
+
+#logo img
+  max-width: 450px
+  @media screen and (max-width: $break-large)
+    max-width: 350px
+  @media screen and (max-width: $break-small)
+    max-width: 100%
+    margin: 10pt 10pt
+
+.logo-box
+  padding: 20px
+  margin: 0 auto

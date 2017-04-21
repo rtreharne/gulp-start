@@ -14,7 +14,7 @@ gulp.task("watch", function(){
 gulp.task("jade", function(event) {
     return gulp.src('jade/**/*.jade')
     .pipe(jade({pretty: true}))
-    .pipe(gulp.dest(''))
+    .pipe(gulp.dest('html/'))
     .pipe(livereload());
 });
 
