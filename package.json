@@ -1,11 +1,15 @@
 {
   "devDependencies": {
+    "coffee-script": "^1.12.5",
+    "coffeeify": "^2.1.0",
     "gulp": "latest",
+    "gulp-browserify": "^0.5.1",
+    "gulp-coffeescript": "0.0.10",
+    "gulp-concat": "^2.6.1",
+    "gulp-jade": "latest",
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "latest",
-    "gulp-webserver": "^0.9.1",
-    "gulp-jade": "latest"
+    "gulp-webserver": "^0.9.1"
   }
 }
-

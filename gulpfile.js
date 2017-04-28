@@ -2,6 +2,8 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     sass = require('gulp-sass'),
     livereload = require('gulp-livereload'),
+    browserify = require('gulp-browserify'),
+    concat = require('gulp-concat')
     webserver = require('gulp-webserver');
 
 gulp.task("watch", function(){
@@ -26,6 +28,14 @@ gulp.task("sass", function(){
       .pipe(livereload());
 });
 
+// Compile and copy scripts
+gulp.task('scripts', function () {
+  return gulp.src('./coffee/**/*.coffee', { read: false })
+             .pipe(browserify({ transform: ['coffeeify'], extensions: ['.coffee'] }))
+             .pipe(concat('*.js'))
+             .pipe(gulp.dest('main.js'));
+});
+
 // Start webserver
 gulp.task("webserver", function(){
     gulp.src('.')
@@ -36,4 +46,4 @@ gulp.task("webserver", function(){
     }));
 });
 
-gulp.task("default", ["jade", "sass", "watch", "webserver"]);
+gulp.task("default", ["scripts", "jade", "sass", "watch", "webserver"]);
