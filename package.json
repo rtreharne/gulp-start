@@ -1,26 +1,20 @@
 {
   "devDependencies": {
-<<<<<<< HEAD
     "coffeeify": "^2.1.0",
     "gulp": "latest",
     "gulp-browserify": "^0.5.1",
-=======
     "coffee-script": "^1.12.5",
     "coffeeify": "^2.1.0",
     "gulp": "latest",
     "gulp-browserify": "^0.5.1",
     "gulp-coffeescript": "0.0.10",
->>>>>>> 2aa4733ee64f1314a5d13930dffb6fe07eeef41f
     "gulp-concat": "^2.6.1",
     "gulp-jade": "latest",
     "gulp-livereload": "^3.8.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-<<<<<<< HEAD
     "gulp-uglify": "^2.1.2",
-=======
     "gulp-uglify": "latest",
->>>>>>> 2aa4733ee64f1314a5d13930dffb6fe07eeef41f
     "gulp-webserver": "^0.9.1"
   }
 }
