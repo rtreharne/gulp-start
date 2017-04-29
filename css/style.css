@@ -1,12 +1,47 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+.navBar {
+  background-color: #fff;
+  position: fixed;
+  min-width: 100%;
+  transition-duration: 1s; }
+
+.navBar.scrolled {
+  background-color: #035252; }
+
+nav.wrapper {
+  align-items: center; }
+
+nav ul {
+  text-align: center;
+  padding: 0;
+  font-size: 1.2em; }
+  nav ul a {
+    color: #035252;
+    text-decoration: none;
+    transition: all .5s ease; }
+    nav ul a:hover {
+      color: #0bb7b7; }
+
+nav li {
+  display: inline-block;
+  padding: 0 15px; }
+
+.navBar.scrolled ul a {
+  color: #fff; }
+  .navBar.scrolled ul a:hover {
+    color: #0bb7b7; }
+
 body {
   padding: 0;
   margin: 0;
-  background-color: #E84545;
-  color: #53354A;
-  font-family: 'Oswald', sans-serif;
+  background-color: #fff;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
   line-height: 2em;
   text-transform: uppercase; }
+
+.wrapper {
+  margin: 0 auto; }
 
 .full-height {
   height: 100vh; }

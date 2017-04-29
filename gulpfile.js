@@ -2,12 +2,17 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     sass = require('gulp-sass'),
     livereload = require('gulp-livereload'),
-    webserver = require('gulp-webserver');
+    webserver = require('gulp-webserver')
+    browserify = require('gulp-browserify'),
+    concat = require('gulp-concat')
+    uglify = require('gulp-uglify')
+    rename = require('gulp-rename');
 
 gulp.task("watch", function(){
     livereload.listen();
     gulp.watch('sass/**/*.sass', ['sass']);
     gulp.watch('jade/**/*.jade', ['jade']);
+    gulp.watch('coffee/**/*.coffee', ['scripts'])
 })
 
 // Compile and copy Jade
@@ -26,6 +31,17 @@ gulp.task("sass", function(){
       .pipe(livereload());
 });
 
+// Compile and copy scripts
+gulp.task('scripts', function () {
+  return gulp.src('./coffee/**/*.coffee', { read: false })
+             .pipe(browserify({ transform: ['coffeeify'], extensions: ['.coffee'] }))
+             .pipe(concat('main.js'))
+             .pipe(gulp.dest('./js'))
+             .pipe(rename('main.min.js'))
+             .pipe(gulp.dest('./js'))
+             .pipe(livereload());
+});
+
 // Start webserver
 gulp.task("webserver", function(){
     gulp.src('.')
@@ -36,4 +52,4 @@ gulp.task("webserver", function(){
     }));
 });
 
-gulp.task("default", ["jade", "sass", "watch", "webserver"]);
+gulp.task("default", ["scripts", "jade", "sass", "watch", "webserver"]);
